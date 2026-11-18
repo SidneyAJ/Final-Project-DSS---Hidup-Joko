@@ -1,0 +1,183 @@
+:root {
+    --gdss-ink: #142842;
+    --gdss-muted: #536980;
+    --gdss-line: #dce6ef;
+    --gdss-teal: #087e74;
+}
+[data-testid="stMainBlockContainer"] {
+    max-width: 86rem;
+    padding-top: 4.1rem;
+    padding-bottom: 3.5rem;
+}
+[data-testid="stSidebar"] { border-right: 1px solid var(--gdss-line); }
+[data-testid="stMetric"] {
+    background: #fff;
+    border-color: var(--gdss-line);
+    border-radius: 16px;
+}
+[data-testid="stMetricValue"] { font-variant-numeric: tabular-nums; }
+.gdss-hero {
+    padding: clamp(1.65rem, 4vw, 3.2rem);
+    min-height: 13rem;
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    border-radius: 24px;
+    background: linear-gradient(116deg, #142542 3%, #163952 61%, #095b61 100%);
+    color: #eef7ff;
+}
+.gdss-hero::after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    width: 24rem;
+    height: 24rem;
+    top: -12rem;
+    right: -2rem;
+    border: 1px solid #76e5d04d;
+    border-radius: 50%;
+    box-shadow: 0 0 0 26px #76e5d019, 0 0 0 54px #76e5d013,
+                0 0 0 86px #76e5d00b;
+    pointer-events: none;
+}
+.gdss-hero .gdss-context {
+    color: #a6ecde;
+    letter-spacing: .09em;
+    font-size: .78rem;
+    font-weight: 750;
+    margin: 0;
+    text-transform: uppercase;
+}
+.gdss-hero h1 {
+    color: #fff;
+    max-width: 46rem;
+    font-size: clamp(2rem, 4.2vw, 3.5rem);
+    line-height: 1.07;
+    letter-spacing: -.045em;
+    margin: .55rem 0 .8rem;
+    padding: 0;
+}
+.gdss-hero p:last-child { color: #d9e9f4; max-width: 37rem; margin: 0; }
+.gdss-leaders {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.gdss-leader {
+    display: grid;
+    grid-template-columns: 2.2rem minmax(0, 1fr) auto;
+    align-items: center;
+    gap: .75rem;
+    padding: .8rem;
+    border-top: 1px solid var(--gdss-line);
+}
+.gdss-leader:first-child {
+    border: 1px solid #cee9e5;
+    background: #edf9f6;
+    border-radius: 12px;
+    margin-bottom: .26rem;
+}
+.gdss-leader-rank {
+    font-size: .84rem;
+    font-weight: 750;
+    padding: .28rem 0;
+    text-align: center;
+    color: #075e57;
+    background: #daf2ed;
+    border-radius: 8px;
+    font-variant-numeric: tabular-nums;
+}
+.gdss-leader-name { font-weight: 650; color: var(--gdss-ink); overflow-wrap: anywhere; }
+.gdss-leader-points { font-weight: 750; color: var(--gdss-teal); white-space: nowrap; }
+.gdss-account {
+    margin: 0;
+    padding: .7rem .85rem;
+    border: 1px solid var(--gdss-line);
+    border-radius: 12px;
+    background: #ffffffb3;
+    color: var(--gdss-muted);
+    font-size: .84rem;
+    overflow-wrap: anywhere;
+}
+.gdss-account strong { color: var(--gdss-ink); }
+@media (max-width: 600px) {
+    [data-testid="stMainBlockContainer"] { padding-top: 4.1rem; }
+    .st-key-dashboard-metrics [data-testid="stHorizontalBlock"] {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: .65rem;
+    }
+    .st-key-dashboard-metrics [data-testid="stColumn"] { width: auto !important; min-width: 0; }
+    .st-key-dashboard-metrics [data-testid="stMetric"] { min-height: 6rem; }
+    .st-key-dashboard-metrics [data-testid="stMetricLabel"] p { white-space: normal; }
+    .gdss-hero { border-radius: 17px; }
+    .gdss-leader { gap: .55rem; padding-inline: .55rem; }
+}
+
+/* Hospital backdrop and motion */
+[data-testid="stMain"] {
+    background-color: #f7f9fc;
+    background-image:
+        linear-gradient(90deg, #f7f9fcf7 0%, #f7f9fcea 37%, #f7f9fca8 100%),
+        linear-gradient(180deg, #f7f9fc00 48%, #f7f9fc 100%),
+        url("./app/static/hospital-background.png");
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-size: 100% 52rem, 100% 52rem, auto 52rem;
+}
+[data-testid="stForm"], .st-key-borda-chart, .st-key-borda-leaders {
+    background-color: #ffffffeb;
+    border-radius: 16px;
+}
+@media (max-width: 600px) {
+    [data-testid="stMain"] {
+        background-image:
+            linear-gradient(180deg, #f7f9fcae 0%, #f7f9fcd9 66%, #f7f9fc 100%),
+            url("./app/static/hospital-background.png");
+        background-position: 77% top;
+        background-size: 100% 40rem, auto 40rem;
+    }
+}
+
+@keyframes gdss-enter {
+    from { opacity: .55; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@media (prefers-reduced-motion: no-preference) {
+    .gdss-hero { animation: gdss-enter .38s ease-out both; }
+    .st-key-dashboard-metrics [data-testid="stColumn"] {
+        animation: gdss-enter .36s ease-out both;
+    }
+    .st-key-dashboard-metrics [data-testid="stColumn"]:nth-child(2) { animation-delay: .05s; }
+    .st-key-dashboard-metrics [data-testid="stColumn"]:nth-child(3) { animation-delay: .10s; }
+    .st-key-dashboard-metrics [data-testid="stColumn"]:nth-child(4) { animation-delay: .15s; }
+}
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+    .st-key-dashboard-metrics [data-testid="stMetric"], .gdss-leader {
+        transition: transform .17s ease-out, box-shadow .17s ease-out;
+    }
+    .st-key-dashboard-metrics [data-testid="stMetric"]:hover, .gdss-leader:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 16px #14284214;
+    }
+}
+
+
+/* Compact dashboard composition */
+.gdss-hero { min-height: 0; padding: clamp(1.15rem, 2.7vw, 2.1rem) clamp(1.4rem, 3.5vw, 2.85rem); }
+.gdss-hero h1 { font-size: clamp(1.65rem, 3.8vw, 3rem); }
+.gdss-leaders { padding-inline-start: 0 !important; }
+.gdss-leader { padding-block: .62rem; }
+.st-key-borda-leaders [data-testid="stProgress"] p { font-size: .82rem; }
+[data-testid="stMetric"] { box-shadow: 0 2px 8px #14284209; }
+
+.st-key-priority-table { background: #ffffffed; }
+@media (max-width: 600px) {
+    .st-key-priority-table [data-testid="stHorizontalBlock"] {
+        display: grid;
+        grid-template-columns: minmax(2rem, .72fr) minmax(5rem, 1.35fr) minmax(0, 1fr) minmax(0, 1fr);
+        gap: .35rem;
+    }
+    .st-key-priority-table [data-testid="stColumn"] { width: auto !important; min-width: 0; }
+    .st-key-priority-table p { font-size: .76rem; overflow-wrap: anywhere; }
+}
