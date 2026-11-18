@@ -20,10 +20,10 @@ Penggunaan pertama memuat data simulasi lengkap. Data perubahan disimpan di `gds
 
 | Nama pengguna | Kata sandi awal | Akses |
 |---|---|---|
-| `admin` | `AlabamaAdmin26!` | Konfigurasi, pengelolaan akun, dan hasil |
-| `DM1` | `AlabamaDM1-26!` | Form DM1 dan hasil |
-| `DM2` | `AlabamaDM2-26!` | Form DM2 dan hasil |
-| `DM3` | `AlabamaDM3-26!` | Form DM3 dan hasil |
+| `Admin` | `AlabamaAdmin26!` | Konfigurasi, pengelolaan akun, dan hasil |
+| `dm1` | `AlabamaDM1-26!` | Form DM1 dan hasil |
+| `dm2` | `AlabamaDM2-26!` | Form DM2 dan hasil |
+| `dm3` | `AlabamaDM3-26!` | Form DM3 dan hasil |
 
 Pilih **Keluar** di sidebar untuk berganti akun. Untuk memberi DM baru akses, masuk sebagai admin, tambahkan kode DM pada **Konfigurasi**, lalu buat kata sandinya di **Akun pengguna**. Mengubah kata sandi mengakhiri akses sesi lama saat sesi tersebut memuat ulang atau melakukan tindakan. Simpan kata sandi demo untuk pengujian di localhost. Jika dipakai bersama, tetapkan kata sandi baru tiap akun dan berikan masing-masing kredensial kepada pemilik akun. SQLite menyimpan hash kata sandi dengan salt individual.
 
