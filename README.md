@@ -11,6 +11,11 @@ py -3.12 -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -r requirements.txt
 .\.venv\Scripts\python.exe -m streamlit run app.py --server.address 127.0.0.1
 ```
+Jika saat mengikuti langkah-langkah di atas muncul pemberitahuan pembaruan pip atau terjadi kendala ketika menjalankan salah satu perintah, jalankan perintah berikut untuk memperbarui pip. Setelah itu, ulangi perintah yang sebelumnya mengalami kendala.
+
+```powershell
+.\.venv\Scripts\python.exe -m pip install --upgrade pip
+```
 
 Buka `http://127.0.0.1:8501` jika browser tidak terbuka otomatis. Jika Python tersedia melalui perintah `python`, gunakan `python -m venv .venv` pada langkah pertama. Tekan Ctrl+C pada terminal untuk menghentikan server.
 
